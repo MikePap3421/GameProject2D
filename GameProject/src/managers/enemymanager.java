@@ -89,7 +89,7 @@ public class enemymanager {
             e.move(GetSpeed(e.getEnemytype()), e.getLastDir());
         } else if (isAtEnd(e)) {
             e.kill();
-            System.out.println("A Life is lost!");
+            playing.removeOneLife();
         } else {
             setNewDirectionAndMove(e);
         }
@@ -106,6 +106,7 @@ public class enemymanager {
         if (isAtEnd(e)){
             System.out.println("telos");
             e.kill();
+            playing.removeOneLife();
             return;}
 
         if (dir == LEFT || dir == RIGHT) {
@@ -232,5 +233,8 @@ public class enemymanager {
 
     public void rewardPlayer(int enemytype) {
         playing.rewardPlayer(enemytype);
+    }
+    public void reset(){
+        enemies.clear();
     }
 }

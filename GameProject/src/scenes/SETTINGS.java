@@ -9,6 +9,9 @@ import static Main.Gamestates.*;
 
 public class SETTINGS extends gamescene implements scenemethods{
     private Mybuttons bMenu,bDifficulty,bEasy,bMedium,bHard,bSoundOn,bSoundOff;
+    private int Difficulty=0;
+    private int Audio=1;
+
     public SETTINGS(Main.game game) {
         super(game);
         initbuttons();
@@ -48,21 +51,79 @@ public class SETTINGS extends gamescene implements scenemethods{
         bMenu.draw(g);
         g.drawString("Difficulty",570,180);
         g.drawString("Audio",600,480);
+        drawSelectedButtons(g);
 
+    }
+
+    private void drawSelectedButtons(Graphics g) {
+        g.setColor(Color.red);
+        if(getDifficulty()==0){
+            g.drawRect(bEasy.x, bEasy.y, bEasy.width, bEasy.height);
+            g.drawRect(bEasy.x+1,bEasy.y+1,bEasy.width-2,bEasy.height-2);
+            g.drawRect(bEasy.x+2,bEasy.y+2,bEasy.width-4,bEasy.height-4);
+        }else if (getDifficulty()==1){
+            g.drawRect(bMedium.x, bMedium.y, bMedium.width, bMedium.height);
+            g.drawRect(bMedium.x+1,bMedium.y+1,bMedium.width-2,bMedium.height-2);
+            g.drawRect(bMedium.x+2,bMedium.y+2,bMedium.width-4,bMedium.height-4);
+        }else {
+            g.drawRect(bHard.x, bHard.y, bHard.width, bHard.height);
+            g.drawRect(bHard.x+1,bHard.y+1,bHard.width-2,bHard.height-2);
+            g.drawRect(bHard.x+2,bHard.y+2,bHard.width-4,bHard.height-4);
+        }
+        if(getAudio()==1){
+            g.drawRect(bSoundOn.x, bSoundOn.y, bSoundOn.width, bSoundOn.height);
+            g.drawRect(bSoundOn.x+1,bSoundOn.y+1,bSoundOn.width-2,bSoundOn.height-2);
+            g.drawRect(bSoundOn.x+2,bSoundOn.y+2,bSoundOn.width-4,bSoundOn.height-4);
+        }else if (getAudio()==0){
+            g.drawRect(bSoundOff.x, bSoundOff.y, bSoundOff.width, bMedium.height);
+            g.drawRect(bSoundOff.x+1,bSoundOff.y+1,bSoundOff.width-2,bSoundOff.height-2);
+            g.drawRect(bSoundOff.x+2,bSoundOff.y+2,bSoundOff.width-4,bSoundOff.height-4);
+        }
     }
 
 
     @Override
     public void mouseclicked(int x, int y) {
-        if (bMenu.getBounds().contains(x, y))
+        if (bMenu.getBounds().contains(x, y)) {
             Setgamestate(MENU);
+        } else if (bEasy.getBounds().contains(x, y)){
+            Difficulty=0;
+        }else if (bMedium.getBounds().contains(x, y)){
+            Difficulty=1;
+        }else if (bHard.getBounds().contains(x, y)){
+            Difficulty=2;
+        }else if (bSoundOn.getBounds().contains(x, y)){
+            Audio=1;
+        }else if (bSoundOff.getBounds().contains(x, y)){
+            Audio=0;
         }
+
+    }
+
+
 
     @Override
     public void mousemoved(int x, int y) {
         bMenu.setmouseover(false);
-        if (bMenu.getBounds().contains(x, y))
+        bEasy.setmouseover(false);
+        bMedium.setmouseover(false);
+        bHard.setmouseover(false);
+        bSoundOn.setmouseover(false);
+        bSoundOff.setmouseover(false);
+        
+        if (bMenu.getBounds().contains(x, y)) {
             bMenu.setmouseover(true);
+        } else if (bEasy.getBounds().contains(x,y)) {
+            bEasy.setmouseover(true);
+        }else if (bMedium.getBounds().contains(x,y)) {
+            bMedium.setmouseover(true);
+        }else if (bHard.getBounds().contains(x,y)) {
+            bHard.setmouseover(true);
+        }else if (bSoundOn.getBounds().contains(x,y)) {
+            bSoundOn.setmouseover(true);
+        }else if (bSoundOff.getBounds().contains(x,y)) {
+            bSoundOff.setmouseover(true);
+        }
     }
 
     @Override
@@ -74,6 +135,14 @@ public class SETTINGS extends gamescene implements scenemethods{
     @Override
     public void mousereleased(int x, int y) {
         bMenu.resetbooleans();
+    }
+
+    public int getAudio() {
+        return Audio;
+    }
+
+    public int getDifficulty() {
+        return Difficulty;
     }
 }
 

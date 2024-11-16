@@ -1,10 +1,7 @@
 package Main;
 
 import managers.tilemanager;
-import scenes.ABOUT;
-import scenes.MENU;
-import scenes.PLAYING;
-import scenes.SETTINGS;
+import scenes.*;
 
 import javax.swing.*;
 
@@ -23,6 +20,7 @@ public class game extends JFrame implements Runnable {
     private PLAYING playing;
     private ABOUT about;
     private tilemanager tilemanager;
+    private GameOver gameOver;
 
 
     public game(){
@@ -45,6 +43,7 @@ public class game extends JFrame implements Runnable {
         settings=new SETTINGS(this);
         tilemanager = new tilemanager();
         about=new ABOUT(this);
+        gameOver=new GameOver(this);
     }
 
 
@@ -146,5 +145,9 @@ public class game extends JFrame implements Runnable {
 
     public ABOUT getAbout() {
         return about;
+    }
+
+    public GameOver getGameOver() {
+        return gameOver;
     }
 }

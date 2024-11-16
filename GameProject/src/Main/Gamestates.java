@@ -1,8 +1,10 @@
 package Main;
 
+import scenes.GameOver;
+
 public enum Gamestates {
 
-    PLAYING,MENU,SETTINGS,ABOUT;
+    PLAYING,MENU,SETTINGS,ABOUT,Game_Over;
 
     public  static Gamestates gamestate = MENU;
 

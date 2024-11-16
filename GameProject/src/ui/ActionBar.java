@@ -2,16 +2,12 @@ package ui;
 
 import java.awt.*;
 import java.text.DecimalFormat;
-
 import helpz.constants;
 import helpz.constants.Towers;
-
-import static helpz.constants.Enemies.getReward;
-import static ui.Mybuttons.*;
 import objects.Tower;
 import scenes.PLAYING;
-
 import static Main.Gamestates.*;
+
 
 public class ActionBar extends Bar {
 
@@ -30,11 +26,21 @@ public class ActionBar extends Bar {
     private boolean showTowerCost;
     private int towerCostType;
 
+    private int lives=15;
+
     public ActionBar(int x, int y, int width, int height, PLAYING playing) {
         super(x, y, width, height);
         this.playing = playing;
         formatter=new DecimalFormat("0.0");
         initButtons();
+    }
+    public void resetEverything() {
+        lives=25;
+        towerCostType=0;
+        showTowerCost=false;
+        gold=100;
+        selectedTower=null;
+        displayedTower=null;
     }
 
     private void initButtons() {
@@ -83,6 +89,9 @@ public class ActionBar extends Bar {
                     selectedTower.getX(), selectedTower.getY(), null);
         }
 
+        g.setColor(Color.black);
+        g.drawString("Lives :"+ lives, 5,950);
+
     }
 
     private void drawTowerCost(Graphics g) {
@@ -98,6 +107,12 @@ public class ActionBar extends Bar {
             g.setColor(Color.red);
             g.drawString("Cant Afford",505,913);
         }
+    }
+    public void removeOneLife(){
+        System.out.println(lives);
+        lives--;
+        if(lives<=0)
+            Setgamestate(Game_Over);
     }
 
     private boolean isTowerCostMoreThanGold() {
@@ -261,4 +276,10 @@ public class ActionBar extends Bar {
     public void addGold(int reward) {
         this.gold+=reward;
     }
+
+    public int getLives() {
+        return lives;
+    }
+
+
 }

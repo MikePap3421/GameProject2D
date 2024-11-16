@@ -35,6 +35,7 @@ public class WaveManager {
     }
     public void increaseWaveindex(){
         waveIndex++;
+        waveTick=0;
         waveStarTimer=false;
         waveTickTimerOver=false;
     }
@@ -87,5 +88,18 @@ public class WaveManager {
 
     public boolean isWaveTimerStarted() {
         return  waveStarTimer;
+    }
+    public void reset(){
+        waves.clear();
+        createWaves();
+
+        enemyIndex=0;
+        waveIndex=0;
+
+        waveStarTimer=false;
+        waveTickTimerOver=false;
+
+        waveTick=0;
+        enemySpawnTick=enemySpawnTickLimit;
     }
 }
