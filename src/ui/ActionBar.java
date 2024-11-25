@@ -18,6 +18,7 @@ public class ActionBar extends Bar {
     private Tower selectedTower;
     private Tower displayedTower;
     private boolean draggingTower = false;
+    private boolean towerDropped=true;
 
     private DecimalFormat formatter;
 
@@ -97,17 +98,19 @@ public class ActionBar extends Bar {
     }
 
     private void drawTowerCost(Graphics g) {
-        g.setFont(new Font("LucidasSans",Font.BOLD,20));
-        g.setColor(Color.gray);
-        g.fillRect(500,850,160,70);
-        g.setColor(Color.black);
-        g.drawRect(500,850,160,70);
-        g.drawString(""+ getTowerCostName(),505,870);
-        g.drawString("Cost: "+getTowerCost()+"g ",505,891 );
+        if(towerDropped==true) {
+            g.setFont(new Font("LucidasSans", Font.BOLD, 20));
+            g.setColor(Color.gray);
+            g.fillRect(500, 850, 160, 70);
+            g.setColor(Color.black);
+            g.drawRect(500, 850, 160, 70);
+            g.drawString("" + getTowerCostName(), 505, 870);
+            g.drawString("Cost: " + getTowerCost() + "g ", 505, 891);
 
-        if(isTowerCostMoreThanGold()){
-            g.setColor(Color.red);
-            g.drawString("Cant Afford",505,913);
+            if (isTowerCostMoreThanGold()) {
+                g.setColor(Color.red);
+                g.drawString("Cant Afford", 505, 913);
+            }
         }
     }
     public void removeOneLife(){
@@ -216,6 +219,7 @@ public class ActionBar extends Bar {
                     b.setmouseover(true);
                     showTowerCost=true;
                     towerCostType=b.getId();
+                    towerDropped=true;
                     return;
                 }
         }
@@ -246,6 +250,7 @@ public class ActionBar extends Bar {
         if (draggingTower==true && selectedTower != null) {
             selectedTower.setX(playing.getMouseX());
             selectedTower.setY(playing.getMouseY());
+            towerDropped=false;
         }
     }
 
