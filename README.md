@@ -4,6 +4,7 @@ Game the player is supposed to defend his \"Empire\" in order to Win. The Enemie
 they reach the end of the Road the player loses one life. The only way to win is by dragging the towers in the map
 for them to shoot and kill the Enemies! This program has been written by Papageorgiou Mixail who was born on July 3th, 2004, 
 in Athens , Greece. The software used for the development of this program are IntelliJ IDEA as the IDE and pixilart.com
-for the Sprites. The soundtracks were taken from Pixabay.com, Chosic.com. 
+for the Sprites. The soundtracks were taken from Pixabay.com, Chosic.com. Special thanks to Keys of moon , alexander
+nakarada and alex productions for the music production.
 
 Thanks For Playing!
