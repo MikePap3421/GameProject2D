@@ -71,6 +71,7 @@ public class GamePaused extends gamescene implements scenemethods {
     public void keypressed(KeyEvent e){
         if(e.getKeyCode()==KeyEvent.VK_SPACE || e.getKeyCode()==KeyEvent.VK_ESCAPE ){
             getGame().getPlaying().setPause();
+            getGame().changeState("PLAYING");
             Setgamestate(PLAYING);
         }
     }

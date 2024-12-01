@@ -1,8 +1,8 @@
 package ui;
 
+import Main.game;
 import java.awt.Color;
 import java.awt.Graphics;
-
 
 public class Bar {
 
@@ -16,11 +16,13 @@ public class Bar {
 
     }
 
+
     protected void drawButtonFeedback(Graphics g, Mybuttons b) {
         // MouseOver
-        if (b.isMouseOver())
+        
+        if (b.isMouseOver()) {
             g.setColor(Color.white);
-        else
+        }else
             g.setColor(Color.BLACK);
 
         // Border

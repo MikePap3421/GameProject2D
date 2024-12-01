@@ -3,6 +3,8 @@ package Main;
 import inputs.SoundHandler;
 import managers.tilemanager;
 import scenes.*;
+import ui.Bar;
+
 import javax.swing.*;
 
 public class game extends JFrame implements Runnable {
@@ -23,6 +25,7 @@ public class game extends JFrame implements Runnable {
     private GameWin gameWin;
     private GamePaused gamePaused;
     private int Audio=1;
+    private Bar b;
 
     private String gameState = "MENU"; // Default state
     private SoundHandler soundManager;
@@ -33,7 +36,7 @@ public class game extends JFrame implements Runnable {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLocation(350, 30);
-
+        setTitle("The Last Empire");
         initClasses();
         add(gamescreen);
         pack();
@@ -54,8 +57,8 @@ public class game extends JFrame implements Runnable {
         gameOver = new GameOver(this);
         gameWin=new GameWin(this);
         gamePaused=new GamePaused(this,settings);
-
         soundManager = new SoundHandler();
+
     }
 
     public void changeState(String newState) {

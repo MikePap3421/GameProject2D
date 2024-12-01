@@ -60,7 +60,7 @@ public class MENU extends gamescene implements scenemethods{
         g.setColor(Color.black);
         Font y = new Font("Comic Sans MS", Font.BOLD, 90);
         g.setFont(y);
-        g.drawString("Game Name",400,200);
+        g.drawString("The Last Empire",300,200);
 
 
     }

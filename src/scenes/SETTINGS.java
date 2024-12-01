@@ -54,6 +54,13 @@ public class SETTINGS extends gamescene implements scenemethods{
         g.drawString("Difficulty",570,180);
         g.drawString("Audio",600,480);
         drawSelectedButtons(g);
+        Font b = new Font("Comic Sans MS", Font.PLAIN, 25);
+        g.setFont(b);
+        drawNotPermited(g);
+    }
+    private void drawNotPermited(Graphics g){
+        if (previousScene==1)
+            g.drawString("Cannot change Settings while you are in the middle of the Game!",320,240);
 
     }
 

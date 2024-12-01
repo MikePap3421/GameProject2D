@@ -33,15 +33,15 @@ public class ABOUT extends gamescene implements scenemethods{
         g.drawString("the course \"Human-Computer Interaction\" in the third year",190,240);
         g.drawString("at the dept. of Computer Science and Electronic Systems ",190,280);
         g.drawString("Engineering at International Hellenic University. In this ",190,320);
-        g.drawString("Game the player is supposed to defend his \"Castle\" in order",190,360);
+        g.drawString("Game the player is supposed to defend his \"Empire\" in order",190,360);
         g.drawString("to Win. The Enemies are Constantly coming in waves and when",190,400);
         g.drawString("they reach the end of the Road the player loses one life.",190,440);
-        g.drawString("The only way to win is by dragging the towers in the map ",190,480);
+        g.drawString("The only way to win is by dragging the towers in the map,",190,480);
         g.drawString("for them to shoot and kill the Enemies! This program has been  ",190,520);
-        g.drawString("written by Papageorgiou Mixail who was born on July 3th, 2004, ",190,560);
-        g.drawString("in Athens , Greece. The software used for the development of ",190,600);
-        g.drawString("this program are IntelliJ IDEA as the IDE and pixilart.com ",190,640);
-        g.drawString("for the Sprites. The soundtracks were taken from StockTune ",190,680);
+        g.drawString("written by Papageorgiou Mixail who was born on July 3th, 2004, in ",190,560);
+        g.drawString("Athens , Greece. The software used for the development of this ",190,600);
+        g.drawString("program are IntelliJ IDEA as the IDE and pixilart.com  for",190,640);
+        g.drawString("the Sprites. The soundtracks were taken from StockTune.com ",190,680);
         g.drawString("and Chosic.com. ",190,720);
         g.drawString("Thanks For Playing! ",190,780);
 
