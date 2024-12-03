@@ -90,11 +90,11 @@ public class constants {
     public static int GetStartDmg(int towerType) {
             switch (towerType) {
                 case CANNON:
-                    return 65;
+                    return 160;
                 case ARCHER:
-                    return 20;
+                    return 25;
                 case WIZARD:
-                    return 5;
+                    return 10;
             }
             return 0;
         }
@@ -107,12 +107,21 @@ public class constants {
                 case WIZARD:
                     return "Wizard";
             }
-            return "";
+            return "none";
         }
 
         public static float GetDefaultRange(int towerType) {
             switch (currentDifficulty) {
                 case 0:
+                    switch (towerType) {
+                        case CANNON:
+                            return 125;
+                        case ARCHER:
+                            return 155;
+                        case WIZARD:
+                            return 175;
+                    }break;
+                case 1:
                     switch (towerType) {
                         case CANNON:
                             return 120;
@@ -121,23 +130,14 @@ public class constants {
                         case WIZARD:
                             return 170;
                     }break;
-                case 1:
+                case 2:
                     switch (towerType) {
                         case CANNON:
-                            return 110;
+                            return 120;
                         case ARCHER:
                             return 140;
                         case WIZARD:
                             return 160;
-                    }break;
-                case 2:
-                    switch (towerType) {
-                        case CANNON:
-                            return 110;
-                        case ARCHER:
-                            return 120;
-                        case WIZARD:
-                            return 150;
                     }break;
             }return 0;
         }
@@ -145,11 +145,11 @@ public class constants {
         public static float GetDefaultCooldown(int towerType) {
             switch (towerType) {
                 case CANNON:
-                    return 55;
+                    return 45;
                 case ARCHER:
-                    return 30;
-                case WIZARD:
                     return 20;
+                case WIZARD:
+                    return 15;
             }
 
             return 0;
@@ -168,7 +168,7 @@ public class constants {
                         case MiniOrc:
                             return 2;
                         case BigOrc:
-                            return 4;
+                            return 1;
                         case Dog:
                             return 2;
                     }break;
@@ -177,7 +177,7 @@ public class constants {
                         case MiniOrc:
                             return 1;
                         case BigOrc:
-                            return 3;
+                            return 1;
                         case Dog:
                             return 1;
                     }break;
@@ -186,7 +186,7 @@ public class constants {
                         case MiniOrc:
                             return 1;
                         case BigOrc:
-                            return 2;
+                            return 0;
                         case Dog:
                             return 1;
                     }break;
@@ -197,9 +197,9 @@ public class constants {
         public static float GetSpeed(int enemyType) {
             switch (enemyType) {
                 case MiniOrc:
-                    return 1.1f;
+                    return 19.25f;
                 case BigOrc:
-                    return 1.0f;
+                    return 1.2f;
                 case Dog:
                     return 1.4f;
             }
@@ -211,29 +211,29 @@ public class constants {
                 case 0:
                     switch (enemyType) {
                         case MiniOrc:
-                            return 120;
+                            return 160;
                         case BigOrc:
-                            return 220;
+                            return 420;
                         case Dog:
-                            return 120;
+                            return 150;
                     }break;
                 case 1:
                     switch (enemyType) {
                         case MiniOrc:
-                            return 130;
+                            return 200;
                         case BigOrc:
-                            return 270;
+                            return 530;
                         case Dog:
-                            return 130;
+                            return 180;
                     }break;
                 case 2:
                     switch (enemyType) {
                         case MiniOrc:
-                            return 140;
+                            return 200;
                         case BigOrc:
-                            return 280;
+                            return 580;
                         case Dog:
-                            return 140;
+                            return 190;
                     }break;
             }
             return 0;

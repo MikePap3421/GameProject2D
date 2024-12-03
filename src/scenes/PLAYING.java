@@ -167,7 +167,7 @@ public class PLAYING extends gamescene implements scenemethods {
     }
 
     @Override
-    public void mousemoved(int x, int y) {
+    public void mousemoved(int x, int y){
         if (y >= 830 && !Pause)
             actionBar.mouseMoved(x, y);
         else {

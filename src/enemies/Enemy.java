@@ -41,7 +41,7 @@ public abstract class Enemy {
 
         if(slowTick<slowTickLimit){
             slowTick++;
-            speed *=0.7f;
+            speed *=0.6f;
         }
 
         switch (dir) {

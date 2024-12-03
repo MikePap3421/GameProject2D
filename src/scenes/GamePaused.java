@@ -45,9 +45,9 @@ public class GamePaused extends gamescene implements scenemethods {
         g.setFont(new Font("LucidaSans", Font.BOLD, 80));
         g.setColor(Color.red);
         g.drawString("PAUSED!", 450, 200);
-        g.setFont(new Font("LucidaSans", Font.BOLD, 35));
+        g.setFont(new Font("LucidaSans", Font.BOLD, 45));
         g.setColor(Color.BLACK);
-        g.drawString("Press 'SPACE' to continue", 420, 250);
+        g.drawString("Press 'SPACE' to continue", 360, 260);
 
         // buttons
         g.setFont(new Font("LucidaSans", Font.BOLD, 20));
@@ -83,6 +83,7 @@ public class GamePaused extends gamescene implements scenemethods {
             resetAll();
         } else if (bReplay.getBounds().contains(x, y)) {
             replayGame();
+            getGame().changeState("PLAYING");
         }else if(bSettings.getBounds().contains(x,y)) {
             settings.setPreviousScene(1);
             Gamestates.Setgamestate(SETTINGS);

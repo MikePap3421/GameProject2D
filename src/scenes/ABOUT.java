@@ -1,6 +1,6 @@
 package scenes;
 
-import Main.game;
+
 import ui.Mybuttons;
 
 import java.awt.*;

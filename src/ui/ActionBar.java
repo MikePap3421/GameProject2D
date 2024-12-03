@@ -27,7 +27,7 @@ public class ActionBar extends Bar {
     private int towerCostType;
 
 
-    private int lives=10;
+    private int lives=1;
     private int difficulty;
 
     public ActionBar(int x, int y, int width, int height, PLAYING playing) {
