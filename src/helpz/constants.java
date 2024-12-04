@@ -197,7 +197,7 @@ public class constants {
         public static float GetSpeed(int enemyType) {
             switch (enemyType) {
                 case MiniOrc:
-                    return 19.25f;
+                    return 1.25f;
                 case BigOrc:
                     return 1.2f;
                 case Dog:

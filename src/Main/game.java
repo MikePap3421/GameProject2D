@@ -25,7 +25,6 @@ public class game extends JFrame implements Runnable {
     private GameWin gameWin;
     private GamePaused gamePaused;
     private int Audio=1;
-    private Bar b;
 
     private String gameState = "MENU"; // Default state
     private SoundHandler soundManager;
