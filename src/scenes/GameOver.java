@@ -3,7 +3,6 @@ package scenes;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-
 import Main.game;
 import ui.Mybuttons;
 import static Main.Gamestates.*;

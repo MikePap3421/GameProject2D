@@ -1,11 +1,8 @@
 package scenes;
 
-
 import ui.Mybuttons;
-
 import java.awt.*;
 import static Main.Gamestates.*;
-
 
 public class ABOUT extends gamescene implements scenemethods{
     private Mybuttons bMenu;
@@ -23,10 +20,10 @@ public class ABOUT extends gamescene implements scenemethods{
         Color specialBlue = new Color(92, 175, 241);
         g.setColor(specialBlue);
         g.fillRect(0, 0, 1280,960 );
-        Font f = new Font("Comic Sans MS", Font.PLAIN, 35);
+        Font f = new Font("Rokkitt Thin", Font.PLAIN, 35);
         g.setFont(f);
         drawButtons(g);
-        Font x = new Font("Comic Sans MS", Font.PLAIN, 32);
+        Font x = new Font("Rokkitt Thin", Font.PLAIN, 32);
         g.setFont(x);
 
         g.drawString("This is a 2D Tower Defence Game developed as a project for  ",190,200);

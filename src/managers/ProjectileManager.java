@@ -3,12 +3,10 @@ package managers;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-
 import enemies.Enemy;
 import helpz.LoadSave;
 import objects.Projectile;
 import objects.Tower;
-import scenes.PLAYING;
 import scenes.PLAYING;
 import static helpz.constants.Towers.*;
 import static helpz.constants.Projectiles.*;

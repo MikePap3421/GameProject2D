@@ -1,6 +1,5 @@
 package ui;
 
-import Main.game;
 import java.awt.Color;
 import java.awt.Graphics;
 

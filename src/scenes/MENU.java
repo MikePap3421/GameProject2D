@@ -1,6 +1,5 @@
 package scenes;
 
-
 import ui.Mybuttons;
 import static Main.Gamestates.*;
 import javax.imageio.ImageIO;
@@ -9,14 +8,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
 import static Main.Gamestates.Setgamestate;
 
 public class MENU extends gamescene implements scenemethods{
 
     private BufferedImage img;
     private ArrayList<BufferedImage> sprites = new ArrayList<>();
-    private SETTINGS settings=new SETTINGS(getGame());
 
     private Mybuttons bplaying,bsettings,bquit,babout;
 
@@ -46,7 +43,7 @@ public class MENU extends gamescene implements scenemethods{
         Color specialBlue = new Color(92, 175, 241);
         g.setColor(specialBlue);
         g.fillRect(0, 0, 1280,960 );
-        Font f = new Font("Comic Sans MS", Font.BOLD, 25);
+        Font f = new Font("Rokkitt Thin", Font.BOLD, 25);
         g.setFont(f);
         drawButtons(g);
 
@@ -58,7 +55,7 @@ public class MENU extends gamescene implements scenemethods{
         bquit.draw(g);
         babout.draw(g);
         g.setColor(Color.black);
-        Font y = new Font("Comic Sans MS", Font.BOLD, 90);
+        Font y = new Font("Trade Winds", Font.BOLD, 90);
         g.setFont(y);
         g.drawString("The Last Empire",300,200);
 

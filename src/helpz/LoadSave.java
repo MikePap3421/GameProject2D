@@ -1,8 +1,5 @@
 package helpz;
 
-import Main.game;
-import scenes.PLAYING;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -11,7 +8,6 @@ import java.io.InputStream;
 
 public class LoadSave  {
     private static int  imgTicks=0,imgIndex=0;
-    private static BufferedImage[] spriteImages = new BufferedImage[2];
 
     public static BufferedImage getspriteatlas2() {
         InputStream[] IS=new InputStream[2];

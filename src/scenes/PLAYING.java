@@ -1,4 +1,5 @@
 package scenes;
+
 import Main.game;
 import enemies.Enemy;
 import helpz.LoadSave;
@@ -10,7 +11,6 @@ import objects.Tower;
 import ui.ActionBar;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-
 import static Main.Gamestates.*;
 import static helpz.constants.Tiles.GRASS_TILE;
 
@@ -226,9 +226,11 @@ public class PLAYING extends gamescene implements scenemethods {
     public towermanager getTowerManager() {
         return towermanager;
     }
+
     public enemymanager getEnemyManager(){
         return enemyManager;
     }
+
     public void shootEnemy(Tower t, Enemy e) {
         projManager.newProjectile(t,e);
     }
@@ -252,6 +254,7 @@ public class PLAYING extends gamescene implements scenemethods {
     public void removeOneLife() {
         actionBar.removeOneLife();
     }
+
     public void resetEverything(){
         actionBar.resetEverything();
 
@@ -270,6 +273,7 @@ public class PLAYING extends gamescene implements scenemethods {
     public ActionBar getActionBar() {
         return actionBar;
     }
+
     public void setPause(){
         Pause=!isPause();
     }

@@ -3,8 +3,6 @@ package Main;
 import inputs.Keyboardlistener;
 import inputs.Mouselistener;
 import inputs.SoundHandler;
-import scenes.MENU;
-
 import javax.swing.*;
 import java.awt.*;
 

@@ -2,11 +2,9 @@ package managers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import Main.Gamestates;
 import events.Wave;
 import scenes.PLAYING;
-
 
 public class WaveManager {
 
@@ -47,7 +45,7 @@ public class WaveManager {
     }
 
     private void createWaves() {
-        waves.add(new Wave(new ArrayList<Integer>(Arrays.asList(0,0,0))));
+        //waves.add(new Wave(new ArrayList<Integer>(Arrays.asList(0,0,0))));
         waves.add(new Wave(new ArrayList<Integer>(Arrays.asList(0,2,1,0,2,0,1))));
         waves.add(new Wave(new ArrayList<Integer>(Arrays.asList(0,1,0,1,0,0,2,1,2))));
         waves.add(new Wave(new ArrayList<Integer>(Arrays.asList(1,1,1,1,0,1,1,0,2,2))));

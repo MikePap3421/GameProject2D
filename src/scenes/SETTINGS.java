@@ -41,20 +41,20 @@ public class SETTINGS extends gamescene implements scenemethods{
         drawButtons(g);
     }
     private void drawButtons(Graphics g) {
-        Font x = new Font("Comic Sans MS", Font.PLAIN, 25);
+        Font x = new Font("Rokkitt Thin", Font.PLAIN, 25);
         g.setFont(x);
         bEasy.draw(g);
         bMedium.draw(g);
         bHard.draw(g);
         bSoundOn.draw(g);
         bSoundOff.draw(g);
-        Font f = new Font("Comic Sans MS", Font.PLAIN, 35);
+        Font f = new Font("Rokkitt Thin", Font.PLAIN, 35);
         g.setFont(f);
         bBack.draw(g);
         g.drawString("Difficulty",570,180);
         g.drawString("Audio",600,480);
         drawSelectedButtons(g);
-        Font b = new Font("Comic Sans MS", Font.PLAIN, 25);
+        Font b = new Font("Rokkitt Thin", Font.PLAIN, 25);
         g.setFont(b);
         drawNotPermited(g);
     }

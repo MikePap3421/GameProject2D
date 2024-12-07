@@ -2,9 +2,7 @@ package enemies;
 
 import helpz.constants;
 import managers.enemymanager;
-
 import java.awt.*;
-
 import static helpz.constants.Direction.*;
 
 public abstract class Enemy {

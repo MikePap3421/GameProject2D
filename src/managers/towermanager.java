@@ -4,11 +4,11 @@ import enemies.Enemy;
 import helpz.LoadSave;
 import objects.Tower;
 import scenes.PLAYING;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import static helpz.constants.Tiles.ROAD_TILE;
 
 public class towermanager {
 
@@ -25,10 +25,13 @@ public class towermanager {
 
     private void loadtowerimg() {
         BufferedImage atlas= LoadSave.getspriteatlas2();
-        towerimgs=new  BufferedImage[3];
+        towerimgs=new  BufferedImage[6];
         towerimgs[0]=atlas.getSubimage(8*64,3*64,64,64);
         towerimgs[1]=atlas.getSubimage(9*64,3*64,64,64);
         towerimgs[2]=atlas.getSubimage(8*64,4*64,64,64);
+        towerimgs[3]=atlas.getSubimage(7*64,2*64,64,64);
+        towerimgs[4]=atlas.getSubimage(8*64,2*64,64,64);
+        towerimgs[5]=atlas.getSubimage(7*64,4*64,64,64);
     }
     public void addTower(Tower selectedTower, int xPos, int yPos) {
         towers.add(new Tower(xPos, yPos, towerAmount++, selectedTower.getTowertype()));
@@ -62,7 +65,10 @@ public class towermanager {
 
     public void draw(Graphics g){
         for (Tower t : towers)
-            g.drawImage(towerimgs[t.getTowertype()], t.getX(), t.getY(), null);
+            if(getTileType(t.getX()+64,t.getY())==ROAD_TILE)
+                g.drawImage(towerimgs[t.getTowertype()+3], t.getX(), t.getY(), null);
+            else
+                g.drawImage(towerimgs[t.getTowertype()], t.getX(), t.getY(), null);
     }
     public BufferedImage[] getTowerImgs() {
         return towerimgs;
@@ -78,6 +84,11 @@ public class towermanager {
         }
         return null;
     }
+
+    private int getTileType(int x, int y) {
+        return playing.getTileType(x, y);
+    }
+
     public void reset(){
         towers.clear();
         towerAmount=0;

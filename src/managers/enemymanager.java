@@ -3,14 +3,11 @@ package managers;
 import enemies.*;
 import enemies.Enemy;
 import helpz.LoadSave;
-import helpz.constants.*;
 import objects.PathPoint;
 import scenes.PLAYING;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-
 import static helpz.constants.Direction.*;
 import static helpz.constants.Enemies.*;
 import static helpz.constants.Tiles.*;

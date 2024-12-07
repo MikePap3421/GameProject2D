@@ -1,13 +1,10 @@
 package scenes;
 
 import ui.Mybuttons;
-
 import static Main.Gamestates.*;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-
 
 public class GameWin extends gamescene implements scenemethods {
 

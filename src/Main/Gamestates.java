@@ -1,7 +1,5 @@
 package Main;
 
-import inputs.SoundHandler;
-
 public enum Gamestates {
 
     PLAYING,MENU,SETTINGS,ABOUT,Game_Over,Game_Win,Game_Paused;

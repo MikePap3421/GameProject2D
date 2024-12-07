@@ -8,7 +8,6 @@ import objects.Tower;
 import scenes.PLAYING;
 import static Main.Gamestates.*;
 
-
 public class ActionBar extends Bar {
 
     private PLAYING playing;

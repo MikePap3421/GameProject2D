@@ -2,14 +2,11 @@ package scenes;
 
 import Main.Gamestates;
 import ui.Mybuttons;
-
 import static Main.Gamestates.*;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
-
 
 public class GamePaused extends gamescene implements scenemethods {
 
