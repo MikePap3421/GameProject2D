@@ -7,7 +7,8 @@ import ui.Bar;
 
 import javax.swing.*;
 
-public class game extends JFrame implements Runnable {
+public class
+game extends JFrame implements Runnable {
     private Gamescreen gamescreen;
 
     private final double fps_set = 200.0;

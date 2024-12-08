@@ -8,14 +8,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import static helpz.constants.Tiles.ROAD_TILE;
-
 public class towermanager {
 
     private PLAYING playing;
     private BufferedImage[] towerimgs;
     private int towerAmount = 0;
     private ArrayList<Tower> towers = new ArrayList<>();
+    private float newX,newY;
 
     public towermanager(PLAYING playing){
         this.playing=playing;
@@ -48,6 +47,7 @@ public class towermanager {
             if (e.isAlive())
                 if (isEnemyInRange(t, e)) {
                     if(t.isCooldowmOver()) {
+                        setEnemyLoc(e);
                         playing.shootEnemy(t, e);
                         t.resetCooldown();
                     }
@@ -55,7 +55,11 @@ public class towermanager {
                     // we do nothing
                 }
         }
+    }
 
+    private void setEnemyLoc(Enemy e) {
+        newX=e.getX();
+        newY=e.getY();
     }
 
     private boolean isEnemyInRange(Tower t, Enemy e) {
@@ -64,11 +68,14 @@ public class towermanager {
     }
 
     public void draw(Graphics g){
-        for (Tower t : towers)
-            if(getTileType(t.getX()+64,t.getY())==ROAD_TILE)
-                g.drawImage(towerimgs[t.getTowertype()+3], t.getX(), t.getY(), null);
+        for (Tower t : towers) {
+            if (t.getX() < newX )
+                g.drawImage(towerimgs[t.getTowertype() + 3], t.getX(), t.getY(), null);
+            else if (t.getX() > newX )
+                g.drawImage(towerimgs[t.getTowertype()], t.getX(), t.getY(), null);
             else
                 g.drawImage(towerimgs[t.getTowertype()], t.getX(), t.getY(), null);
+        }
     }
     public BufferedImage[] getTowerImgs() {
         return towerimgs;
